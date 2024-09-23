@@ -57,7 +57,9 @@ The project uses the Global Land Temperatures by Country dataset, which contains
     - Average temperatures for those years
 - **Line Chart**: A line chart visualizing the temperature trend for the selected country.
 
-[View the Interactive Dashboard](https://mybinder.org/v2/gh/martasframos/Data-Projects/HEAD)
+Here’s an example image:
+
+![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map.jpg)
 
 ### Future Improvements
 Incorporate additional data sources for more comprehensive analysis (e.g., CO2 emissions).
