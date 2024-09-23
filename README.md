@@ -57,9 +57,19 @@ The project uses the Global Land Temperatures by Country dataset, which contains
     - Average temperatures for those years
 - **Line Chart**: A line chart visualizing the temperature trend for the selected country.
 
-Here’s an example image:
+The Average temperature map output is shown below:
 
 ![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map.jpg)
+
+![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map_A.jpg)
+
+The map showing the change in the average yearly temperature looks like this:
+
+![Example Image](./Data_visualisation_dashboard/Temperature_Change_Interactive_Map.jpg)
+
+![Example Image](./Data_visualisation_dashboard/Temperature_Change_Interactive_Map_B.jpg)
+
+
 
 ### Future Improvements
 Incorporate additional data sources for more comprehensive analysis (e.g., CO2 emissions).
