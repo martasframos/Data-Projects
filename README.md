@@ -42,7 +42,7 @@ The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is
 
 The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
 
-![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map.jpg)
+![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
 
 
 #### Technologies Used
