@@ -22,7 +22,7 @@ Independent projects designed to explore various domains of data science. These 
 - **Solving practical problems in areas such as climate science, finance, and more**
 
 ## Computing Annulus Regions in MaNGA Galaxies
-
+Date: 05/2022
 ### 1. Introduction
 The MaNGA (Mapping Nearby Galaxies at Apache Point Observatory) survey has provided spatially resolved data for over 10,000 galaxies as part of the fourth generation of the Sloan Digital Sky Survey (SDSS). This type of data offers valuable insights into the physical processes governing galaxy formation and evolution. The [MaNGA data analysis pipeline](https://www.sdss4.org/dr17/manga/manga-analysis-pipeline/) (DAP) provides 2-D maps of various galaxy properties, such as Hα flux, D4000, and stellar velocity maps. The power of spatially resolved galaxy surveys lies in the ability to investigate different regions of the galaxy separately. Analyzing annulus regions within galaxies allows astronomers to study variations in stellar populations, gas dynamics, and chemical enrichment across different regions of the galaxy.
 
@@ -56,7 +56,7 @@ The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustra
 ---
 
 ## Global Temperature Data Dashboard
-
+Date: 09/2024
 ### 1. Project Overview
 This project provides an interactive dashboard to visualize global temperature changes over time using data from the Global Land Temperatures dataset. The dashboard allows users to explore average yearly temperatures by country and observe changes in temperature over the years. 
 
@@ -71,13 +71,6 @@ Built using **Dash** and **Plotly**, this dashboard facilitates interactive visu
 ### 2. Project Purpose
 The primary goal of this project is to create a visually appealing and informative dashboard that allows users to analyze temperature trends across different countries. It aims to highlight the impact of climate change by showcasing average temperature changes from the first recorded year to the most recent year.
 
-#### Technologies Used
-- Python
-- Dash
-- Plotly
-- Pandas
-- Jupyter Notebook (for development)
-- HTML/CSS (for basic styling)
 
 #### Dataset
 The project uses the Global Land Temperatures by Country dataset, which contains historical temperature data collected from various countries.
@@ -91,19 +84,33 @@ The project uses the Global Land Temperatures by Country dataset, which contains
     - Average temperatures for those years
 - **Line Chart**: A line chart visualizing the temperature trend for the selected country.
 
-The average temperature map output is shown below:
+The code is provided in [this notebook](./Data_visualisation_dashboard/Data_visualisation_dashboard.ipynb) and the outputs are presented below:
+
+1- Dropdown menu to select which country to look at the average yearly temperature
+
+![Example Image](./Data_visualisation_dashboard/Drop_down_Menu_A.png)
+
+![Example Image](./Data_visualisation_dashboard/Drop_down_Menu_B.png)
+
+2- The average temperature map with ability to hover over a desired country
 
 ![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map.jpg)
 
 ![Example Image](./Data_visualisation_dashboard/Average_Temperature_Interactive_Map_A.jpg)
 
-The map showing the change in the average yearly temperature looks like this:
+3- The map showing the change in the average yearly temperature. Can also hover over any country.
 
 ![Example Image](./Data_visualisation_dashboard/Temperature_Change_Interactive_Map.jpg)
 
 ![Example Image](./Data_visualisation_dashboard/Temperature_Change_Interactive_Map_B.jpg)
 
-
+#### Technologies Used
+- Python
+- Dash
+- Plotly
+- Pandas
+- Jupyter Notebook (for development)
+- HTML/CSS (for basic styling)
 
 ### Future Improvements
 Incorporate additional data sources for more comprehensive analysis (e.g., CO2 emissions).
