@@ -3,7 +3,7 @@ This repository showcases a variety of **data science applications and analyses*
 
 ## Table of Contents
 - [What You Will Find](#what-you-will-find)
-- [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies
+- [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies)
 - [Global Temperature Data Dashboard](#global-temperature-data-dashboard)
 
 ## What You'll Find:
