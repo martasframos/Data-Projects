@@ -1,25 +1,18 @@
 # Data Science Projects
-[This repository](https://github.com/martasframos/Data-Projects) showcases a variety of **data science applications and analyses** that demonstrate my expertise in **data manipulation**, **visualization**, and **machine learning**. These projects range from work I completed as part of my **PhD in Astrophysics** to additional projects aimed at solving real-world problems and enhancing my data science skills.
+
+Welcome to My [Data Science Projects Repository](https://github.com/martasframos/Data-Projects)
+In this repository, you will find a collection of projects that reflect my journey as a data scientist, bridging the gap between research in astrophysics and practical applications. Here I showcase a variety of **data science applications and analyses** that demonstrate my expertise in **data manipulation**, **visualization**, and **machine learning**.
+
+## What You Will Find Here:
+**PhD Projects in Astrophysics:**
+Explore my academic research where I used advanced data analysis techniques to investigate the evolution of galaxies. These projects highlight my ability to handle large datasets, apply statistical methodologies, and develop algorithms tailored to specific research questions within the field of astrophysics.
+
+**Real-World Data Projects:**
+In addition to my academic endeavors, I have undertaken projects that utilise real-world datasets to demonstrate how the skills and techniques I acquired during my PhD can be applied to address practical challenges.
 
 ## Table of Contents
-- [What You Will Find](#what-you-will-find)
 - [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies)
 - [Global Temperature Data Dashboard](#global-temperature-data-dashboard)
-
-## What You'll Find:
-
-#### PhD Projects
-Research-focused projects that leverage data science techniques in the context of astrophysics. These projects highlight advanced methods in:
-
-- **Getting spectra from MaNGA galaxies**
-- **Using Machine Learning to predict galaxy gradients**
-- **Correcting double peaks in emission lines of stacked spectra**
-
-#### Real-World Projects
-Independent projects designed to explore various domains of data science. These include:
-
-- **Data visualizations using tools like Plotly and Dash**
-- **Solving practical problems in areas such as climate science, finance, and more**
 
 ## Computing Annulus Regions in MaNGA Galaxies
 Date: 05/2022
