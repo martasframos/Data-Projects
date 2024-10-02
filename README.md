@@ -38,11 +38,11 @@ Each MaNGA datacube contains various properties that can be extracted, and the c
 
 The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is shown below:
 
-![Example Image](./MaNGA_Map.jpg)
+![Example Image](./MaNGA_Annulus_region/MaNGA_Map.jpg)
 
-The code shown in [this notebook]() creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
+The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
 
-![Example Image](./Annulus_region.jpg)
+![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
 
 
 #### Technologies Used
