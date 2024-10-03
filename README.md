@@ -35,7 +35,7 @@ The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is
 
 The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
 
-![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
+![Example Image](https://github.com/martasframos/Data-Projects/blob/main/MaNGA_Annulus_region/Annulus_region_illustration.ipynb)
 
 
 #### Technologies Used
@@ -77,7 +77,7 @@ The project uses the Global Land Temperatures by Country dataset, which contains
     - Average temperatures for those years
 - **Line Chart**: A line chart visualizing the temperature trend for the selected country.
 
-The code is provided in [this notebook](./Data_visualisation_dashboard/Data_visualisation_dashboard.ipynb) and the outputs are presented below:
+The code is provided in [this notebook](https://github.com/martasframos/Data-Projects/blob/main/Data_visualisation_dashboard/Data_visualisation_dashboard.ipynb) and the outputs are presented below:
 
 1- Dropdown menu to select which country to look at the average yearly temperature
 
