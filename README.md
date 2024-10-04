@@ -58,7 +58,7 @@ The creation of annular regions was successful, and the results demonstrate the 
 - FITS (Flexible Image Transport System)
 
 ---
-##Data Analysis Report on the Iris Dataset
+## Data Analysis Report on the Iris Dataset
 Date: 07/2024
 
 ### 1. Introduction
@@ -81,14 +81,48 @@ The Iris dataset is a widely used benchmark dataset in machine learning and data
 - Species: Categorical variable indicating the species of iris flowers (Setosa, Versicolor, Virginica).
 
 #### 2.1 Analysis
-
 In this analysis, I performed the following steps:
 
 **Data exploration and visualization** of feature relationships and species distribution.
 **Clustering with K-Means** to uncover patterns and groupings within the data.
 **Dimensionality reduction using PCA and t-SNE** to visualize the data in 2D space.
 
+##### 2.1.1. Data Exploration and Visualization:
+The first step of the analysis was to visualize the relationships between different features and species. Using Seaborn's pairplot, I examined the pairwise relationships between the features, segmented by species. The plot demonstrated clear separations between the setosa species and the other two, especially when considering petal length and petal width.
 
+Additionally, I created a correlation heatmap to assess the linear relationships between the features. This revealed that petal length and petal width had the strongest positive correlation, highlighting their significance in distinguishing between species.
+
+Key observations:
+
+Petal features (length and width) show stronger correlations with species than sepal features.
+The setosa species is distinctly separated from versicolor and virginica.
+
+
+
+
+
+##### 2.1.2. Clustering with K-Means:
+To explore the natural groupings within the dataset, I applied K-Means clustering with three clusters (representing the three species). The clustering was visualized through a scatter plot based on sepal length and sepal width, colored by the cluster assignment.
+
+I evaluated the clustering using the silhouette score, which measured how well-separated the clusters were. The silhouette score for K-Means clustering was 0.55, indicating moderately well-defined clusters.
+
+Key insights:
+
+K-Means clustering reasonably grouped the data, although versicolor and virginica showed some overlap.
+The model successfully identified setosa as a distinct cluster.
+
+
+##### 2.1.3. Dimensionality Reduction with PCA and t-SNE:
+Next, I performed Principal Component Analysis (PCA) to reduce the dataset’s dimensionality and visualize it in a two-dimensional space. PCA identified the two most important components that accounted for a significant portion of the variance in the dataset.
+
+Through PCA, the species were visualized in 2D, with setosa distinctly separated. However, the overlap between versicolor and virginica persisted.
+
+To complement PCA, I applied t-Distributed Stochastic Neighbor Embedding (t-SNE), a nonlinear dimensionality reduction technique, to capture complex relationships between the samples. The t-SNE visualization revealed a more nuanced separation between the species, though some overlap remained.
+
+Key findings:
+
+PCA provided a quick way to identify the most important features.
+t-SNE offered a more intricate view of how species relate to each other in multidimensional space.
 
 
 
