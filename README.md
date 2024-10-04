@@ -20,11 +20,18 @@ Date: 05/2022
 The MaNGA (Mapping Nearby Galaxies at Apache Point Observatory) survey has provided spatially resolved data for over 10,000 galaxies as part of the fourth generation of the Sloan Digital Sky Survey (SDSS). This type of data offers valuable insights into the physical processes governing galaxy formation and evolution. The [MaNGA data analysis pipeline](https://www.sdss4.org/dr17/manga/manga-analysis-pipeline/) (DAP) provides 2-D maps of various galaxy properties, such as Hα flux, D4000, and stellar velocity maps. The power of spatially resolved galaxy surveys lies in the ability to investigate different regions of the galaxy separately. Analyzing annulus regions within galaxies allows astronomers to study variations in stellar populations, gas dynamics, and chemical enrichment across different regions of the galaxy.
 
 #### 1.1 Goal of This Project
-The main goal of this project is to compute annulus regions within MaNGA galaxies, compute the stacked spectra within those regions, and investigate the radial profiles of different galaxy properties.
+The main objective of my project is to create distinct annular regions within galaxies to facilitate the extraction of their spectral data. Spectroscopy is a vital tool in astronomy, as it allows us to obtain critical information about galaxies, such as stellar mass, star formation rates, stellar ages, and metallicity.
+
+In order to compute the radial profiles of galaxies, I first need to define and identify various annular regions around the galactic center. This involves determining which spaxels (the spatial pixels in a spectroscopic data cube) fall within each of these annulus regions. By accurately categorizing these spaxels, I can prepare for the systematic extraction of spectral data from each region in future analyses.
+
+Here’s a brief overview of my approach:
+
+**Region Definition:** I will establish clear criteria for defining the annular regions within the galaxy.
+
+**Spaxel Identification:** I’ll develop algorithms to identify which spaxels lie within each of the defined annulus regions.
 
 ### 2. The Data
 
-#### 2.1 Data Source
 The data for this project will be sourced from the MaNGA public data release, specifically the SDSS DR17. The data is available in FITS format and can be downloaded from the [SDSS website](https://www.sdss4.org/dr17/manga/).
 
 Each MaNGA datacube contains various properties that can be extracted, and the code presented here follows [this tutorial](https://www.sdss4.org/dr17/manga/manga-tutorials/how-do-i-look-at-my-data/python/) to obtain the necessary properties.
@@ -33,9 +40,13 @@ The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is
 
 ![Example Image](./MaNGA_Annulus_region/MaNGA_Map.jpg)
 
+### Results
+
 The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
 
 ![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
+
+The creation of annular regions was successful, and the results demonstrate the potential for spectral extraction and stacking. One challenge I encountered was ensuring that the criteria for defining the annuli accurately reflected the galaxy's physical structure (i.e. taking the size and axis ratio into consideration). However, through iterative refinement, I improved the algorithm's accuracy.
 
 
 #### Technologies Used
@@ -47,6 +58,39 @@ The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustra
 - FITS (Flexible Image Transport System)
 
 ---
+##Data Analysis Report on the Iris Dataset
+Date: 07/2024
+
+### 1. Introduction
+As I embarked on my journey into the world of data science during my Ph.D., one of my goals was to apply the analytical skills I acquired in real-world contexts. A perfect opportunity to demonstrate this came with the Iris dataset, a classic in the fields of machine learning and statistics. This dataset contains 150 samples of iris flowers, characterized by four features: sepal length, sepal width, petal length, and petal width. Each flower belongs to one of three species: Setosa, Versicolor, or Virginica.
+
+My motivation for analyzing this dataset was twofold: to explore the relationships among its features and to showcase the data science techniques I’ve learned. I wanted to highlight how these skills can be applied effectively to solve practical problems.
+
+#### 1.1 Motivation
+This analysis is not just about crunching numbers; it’s about uncovering insights and building models that can help us understand and classify species based on their characteristics. By working through this dataset, I aimed to demonstrate my grasp of various data science methodologies, including visualization, clustering, classification, and statistical testing. My hope was to illustrate the versatility of these techniques and their relevance to real-world applications.
+
+### 2 Data and analysis
+The data used here is publicly available at the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/53/iris).
+The Iris dataset is a widely used benchmark dataset in machine learning and data analysis. It contains measurements of iris flowers across three species, enabling us to explore various features and relationships within the data.
+
+**Features**
+- Sepal Length: Length of the sepal in centimeters.
+- Sepal Width: Width of the sepal in centimeters.
+- Petal Length: Length of the petal in centimeters.
+- Petal Width: Width of the petal in centimeters.
+- Species: Categorical variable indicating the species of iris flowers (Setosa, Versicolor, Virginica).
+
+#### 2.1 Analysis
+
+In this analysis, I performed the following steps:
+
+**Data exploration and visualization** of feature relationships and species distribution.
+**Clustering with K-Means** to uncover patterns and groupings within the data.
+**Dimensionality reduction using PCA and t-SNE** to visualize the data in 2D space.
+
+
+
+
 
 ## Global Temperature Data Dashboard
 Date: 09/2024
