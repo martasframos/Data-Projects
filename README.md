@@ -1,3 +1,4 @@
+Hi, I'm Marta! I am a data science enthusiast with a background in Astrophysics and experience in analyzing medical data. I’m passionate about using data to solve real-world problems and uncover insights. My goal is to leverage my skills in data analysis, machine learning, and data visualization to facilitate data-driven decisions that positively impact businesses and communities. I believe in the transformative power of data and am excited to contribute to innovative solutions across diverse fields.
 # Data Science Projects
 
 Welcome to My [Data Science Projects Repository](https://github.com/martasframos/Data-Projects)
