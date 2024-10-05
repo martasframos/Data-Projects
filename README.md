@@ -13,7 +13,7 @@ In addition to my academic endeavors, I have undertaken projects that utilise re
 ## Table of Contents
 - [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies)
 - [Global Temperature Data Dashboard](#global-temperature-data-dashboard)
-
+---
 ## Computing Annulus Regions in MaNGA Galaxies
 Date: 05/2022
 ### 1. Introduction
@@ -56,6 +56,67 @@ The creation of annular regions was successful, and the results demonstrate the 
 - Astropy
 - Matplotlib
 - FITS (Flexible Image Transport System)
+---
+## Predicting Galaxy Gradients with Machine Learning 
+
+### 1. Introduction
+
+In this study, I analyze the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the center of the galaxy, with the property values represented on the y-axis and the normalized distance `r/R_e` on the x-axis, where `R_e` denotes the effective radius of the galaxy.
+
+This spatial analysis allows us to explore the distribution of sSFR gradients across different regions of galaxies. Subsequently, we apply machine learning techniques to investigate the relationships between these derived properties and other galaxy characteristics—including color, Sérsic Index, and more—to identify which features are the most predictive of sSFR gradients.
+
+### 2. Analysis 
+
+The sSFR gradients are categorized into three distinct classes based on their slope characteristics:
+
+**Negative Gradient:** Indicates a decrease in sSFR as the distance from the galaxy center increases.
+**Shallow Gradient:** Represents a minimal change in sSFR across the annulus regions.
+**Positive Gradient:** Suggests an increase in sSFR as one moves outward from the center of the galaxy.
+To classify these gradients, I utilise **Random Forest Classification**, a robust ensemble learning method that excels at handling complex interactions between variables and is less prone to overfitting. This model enables us to assign galaxies to one of the three categories based on various predictive features, including color and Sérsic Index.
+
+**Feature Importance**
+After training the model, we assess **feature importance** to identify which characteristics most significantly influence the classification of sSFR gradients. Understanding these predictive features is essential for gaining insights into the physical processes that govern star formation within galaxies.
+
+**Model Evaluation**
+We employ several metrics to evaluate the performance of our classification model:
+
+**Confusion Matrix:** This matrix provides a detailed overview of the model's predictions, illustrating true positives, true negatives, false positives, and false negatives.
+**ROC Curve:** The Receiver Operating Characteristic (ROC) curve depicts the balance between sensitivity (true positive rate) and specificity (false positive rate) across different threshold settings.
+**Accuracy:** While accuracy serves as a general measure of model performance, it can sometimes be misleading in the context of imbalanced class distributions. Thus, we complement accuracy with the confusion matrix and ROC curve analysis to ensure a comprehensive evaluation.
+Through this analysis, I aim to uncover the galaxy properties that are most predictive of sSFR gradients, contributing to our understanding of galaxy evolution and the underlying mechanisms of star formation.
+
+### 3. Results
+
+In  I provide the code used to train and fit the data. I perform a gridsearch cross validation with 5 folds to find the best fitting hyperparatemeters. The ranges explored here are quite small, sicne I found in a prelimenary analysis that the increase in performance was very small (+ 0.2 in accuracy) with the computation time of the search being over 10 times the one presented here. For this reason, in the interes of efficient computing, I show a small grid search. 
+
+In [this notebook](https://github.com/martasframos/Data-Projects/blob/main/Galaxy_gradients/sSFR_gradients.ipynb), I provide the code used to train and fit the model on the dataset. I perform a **Grid Search Cross-Validation** with 5 folds to identify the best-fitting hyperparameters for the model.
+
+**Hyperparameter Tuning**
+The ranges explored for the hyperparameters are relatively small. This decision stems from preliminary analyses, which indicated that increasing the hyperparameter ranges yielded only marginal improvements in model performance (approximately +0.2 in accuracy). However, the computational time required for a broader search was significantly higher—over ten times greater than the current configuration.
+
+**Rationale for a Smaller Grid Search**
+Given the trade-off between computational efficiency and performance gains, I opted to conduct a more focused grid search. This approach ensures that the model training process remains efficient without sacrificing significant predictive performance. The results obtained from this smaller grid search will serve as a reliable foundation for understanding the model's behavior and guiding future optimization efforts.
+
+After fitting the model, the accuracy achieved was **0.63**. Below are additional performance evaluations that further illustrate the model's effectiveness.
+
+**Confusion Matrix**
+The confusion matrix provides insight into the classification results. Notably, class 0 (negative gradient) has the least proportion of misclassifications, indicating a relatively high level of accuracy in predicting this class.
+
+![Example Image](./Galaxy_gradients/confusion_matrix_global.jpg)
+
+**ROC Curve**
+The Receiver Operating Characteristic (ROC) curve visualizes the trade-off between sensitivity (true positive rate) and specificity (false positive rate) at various threshold settings. This curve is essential for understanding the model's performance across different classification thresholds.
+
+![Example Image](./Galaxy_gradients/roc_curve_global.jpg)
+
+To enhance our understanding of the model's predictions, I analysed the feature importance scores derived from the Random Forest classifier. These scores indicate which properties are the most predictive of the specific star formation rate (sSFR) gradients.
+
+**Importance of Features**
+The following table presents the importance scores for each feature:
+
+![Example Image](./Galaxy_gradients/Feature_Importance.jpg)
+
+
 
 ---
 ## Data Analysis Report on the Iris Dataset
