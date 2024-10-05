@@ -170,7 +170,17 @@ Here, sSFR, Sérsic Index and g-r colour being the top 3 features that are most 
 
 ### Conclusions
 In this work, I concluded that the sSFR in the central region of the galaxy, together with its Sérsic Index and g-r colour are the features that play the most significant role in predicting the sSFR gradient in galaxies. 
-
+#### Technologies Used
+- Python
+- Pandas
+- NumPy
+- Seaborn
+- scikit-learn
+- Random Forest
+- GridSearchCV
+- Feature Importance Analysis
+- Cross-Validation
+  
 ---
 ## Data Analysis Report on the Iris Dataset
 Date: 07/2024
@@ -373,7 +383,16 @@ The findings from this analysis have broader implications in fields such as bota
 
 In summary, this project successfully demonstrated the power of data visualization, feature engineering, and clustering techniques in understanding and predicting species classifications in the Iris dataset. The insights gained contribute to a deeper understanding of the biological differences between species and highlight the importance of data-driven approaches in scientific research.
 
-
+- **Technologies Used**:
+  - Python
+  - Pandas
+  - NumPy
+  - Seaborn
+  - scikit-learn
+  - KMeans
+  - Principal Component Analysis (PCA)
+  - t-SNE
+  - Matplotlib
 
 ---
 ## Global Temperature Data Dashboard
