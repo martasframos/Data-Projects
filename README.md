@@ -1,4 +1,4 @@
-Hi, I'm Marta! I am a data science enthusiast with a background in Astrophysics and experience in analyzing medical data. I’m passionate about using data to solve real-world problems and uncover insights. My goal is to leverage my skills in data analysis, machine learning, and data visualization to facilitate data-driven decisions that positively impact businesses and communities. I believe in the transformative power of data and am excited to contribute to innovative solutions across diverse fields.
+Hi, I'm Marta! I am a data science enthusiast with a background in Astrophysics and experience in analysing medical data. I’m passionate about using data to solve real-world problems and uncover insights. My goal is to leverage my skills in data analysis, machine learning, and data visualization to facilitate data-driven decisions that positively impact businesses and communities. I believe in the transformative power of data and am excited to contribute to innovative solutions across diverse fields.
 # Data Science Projects
 
 Welcome to My [Data Science Projects Repository](https://github.com/martasframos/Data-Projects)
@@ -9,7 +9,7 @@ In this repository, you will find a collection of projects that reflect my journ
 Explore my academic research where I used advanced data analysis techniques to investigate the evolution of galaxies. These projects highlight my ability to handle large datasets, apply statistical methodologies, and develop algorithms tailored to specific research questions within the field of astrophysics.
 
 **Real-World Data Projects:**
-In addition to my academic endeavors, I have undertaken projects that utilise real-world datasets to demonstrate how the skills and techniques I acquired during my PhD can be applied to address practical challenges.
+In addition to my academic endeavours, I have undertaken projects that utilise real-world datasets to demonstrate how the skills and techniques I acquired during my PhD can be applied to address practical challenges.
 
 ## Table of Contents
 - [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies)
@@ -23,12 +23,12 @@ Date: 05/2022
 ### 1. Introduction
 The MaNGA (Mapping Nearby Galaxies at Apache Point Observatory) survey has provided spatially resolved data for over 10,000 galaxies as part of the fourth generation of the Sloan Digital Sky Survey (SDSS). This type of data offers valuable insights into the physical processes governing galaxy formation and evolution. The [MaNGA data analysis pipeline](https://www.sdss4.org/dr17/manga/manga-analysis-pipeline/) (DAP) offers 2-D maps of various galaxy properties, including Hα flux, D4000, and stellar velocity maps. The power of spatially resolved galaxy surveys lies in the ability to investigate different regions of the galaxy separately.
 
-By analyzing annulus regions within galaxies, astronomers can study variations in stellar populations, gas dynamics, and chemical enrichment across different parts of the galaxy.
+By analysing annulus regions within galaxies, astronomers can study variations in stellar populations, gas dynamics, and chemical enrichment across different parts of the galaxy.
 
 #### 1.1 Goal of This Project
 The main objective of this project is to create distinct annular regions within galaxies to facilitate the extraction of their spectral data. Spectroscopy is a vital tool in astronomy, providing critical information about galaxies, such as stellar mass, star formation rates, stellar ages, and metallicity.
 
-To compute the radial profiles of galaxies, I first need to define and identify various annular regions around the galactic center. This involves determining which spaxels (the spatial pixels in a spectroscopic data cube) fall within each of these annular regions. By accurately categorizing these spaxels, I can prepare for the systematic extraction of spectral data from each region in future analyses.
+To compute the radial profiles of galaxies, I first need to define and identify various annular regions around the galactic centre. This involves determining which spaxels (the spatial pixels in a spectroscopic data cube) fall within each of these annular regions. By accurately categorizing these spaxels, I can prepare for the systematic extraction of spectral data from each region in future analyses.
 
 Here’s a brief overview of my approach:
 
@@ -47,7 +47,7 @@ The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is
 
 ### Results
 
-The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) reates several annular regions inside the galaxy map, with each of the regions encompassing a specific number of spaxels, counted only once. An illustration of these regions is presented below:
+The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annular regions inside the galaxy map, with each of the regions encompassing a specific number of spaxels, counted only once. An illustration of these regions is presented below:
 
 ![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
 
@@ -66,39 +66,37 @@ The creation of annular regions was successful, demonstrating the potential for 
 Dat2 01/2024
 ### 1. Introduction
 
-In this study, I analyze the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the center of the galaxy, with the property values represented on the y-axis and the normalized distance `r/R_e` on the x-axis, where `R_e` denotes the effective radius of the galaxy.
+In this study, I analyse the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the centre of the galaxy, with the property values represented on the y-axis and the distance to the centre in unites of `r/R_e` on the x-axis, where `R_e` denotes the effective radius of the galaxy.
 
-This spatial analysis allows us to explore the distribution of sSFR gradients across different regions of galaxies. Subsequently, we apply machine learning techniques to investigate the relationships between these derived properties and other galaxy characteristics—including color, Sérsic Index, and more—to identify which features are the most predictive of sSFR gradients.
+This spatial analysis allows us to explore the distribution of sSFR gradients across different regions of galaxies. Subsequently, I apply machine learning techniques to investigate the relationships between these derived properties and other galaxy characteristics—including colour, Sérsic Index, and more—to identify which features are the most predictive of sSFR gradients.
 
 ### 2. Analysis 
 
 The sSFR gradients are categorized into three distinct classes based on their slope characteristics:
 
-**Negative Gradient:** Indicates a decrease in sSFR as the distance from the galaxy center increases.
+**Negative Gradient:** Indicates a decrease in sSFR as the distance from the galaxy centre  increases.
 
 **Shallow Gradient:** Represents a minimal change in sSFR across the annulus regions.
 
-**Positive Gradient:** Suggests an increase in sSFR as one moves outward from the center of the galaxy.
+**Positive Gradient:** Suggests an increase in sSFR as one moves outward from the centre  of the galaxy.
 
-To classify these gradients, I utilise **Random Forest Classification**, a robust ensemble learning method that excels at handling complex interactions between variables and is less prone to overfitting. This model enables us to assign galaxies to one of the three categories based on various predictive features, including color and Sérsic Index.
+To classify these gradients, I utilise **Random Forest Classification**, a robust ensemble learning method that excels at handling complex interactions between variables and is less prone to overfitting. This model enables us to assign galaxies to one of the three categories based on various predictive features, including colour and Sérsic Index.
 
 **Feature Importance**
-After training the model, we assess **feature importance** to identify which characteristics most significantly influence the classification of sSFR gradients. Understanding these predictive features is essential for gaining insights into the physical processes that govern star formation within galaxies.
+After training the model, I assess **feature importance** to identify which characteristics most significantly influence the classification of sSFR gradients. Understanding these predictive features is essential for gaining insights into the physical processes that govern star formation within galaxies.
 
 **Model Evaluation**
-We employ several metrics to evaluate the performance of our classification model:
+I employ several metrics to evaluate the performance of our classification model:
 
 **Confusion Matrix:** This matrix provides a detailed overview of the model's predictions, illustrating true positives, true negatives, false positives, and false negatives.
 
 **ROC Curve:** The Receiver Operating Characteristic (ROC) curve depicts the balance between sensitivity (true positive rate) and specificity (false positive rate) across different threshold settings.
 
-**Accuracy:** While accuracy serves as a general measure of model performance, it can sometimes be misleading in the context of imbalanced class distributions. Thus, we complement accuracy with the confusion matrix and ROC curve analysis to ensure a comprehensive evaluation.
+**Accuracy:** While accuracy serves as a general measure of model performance, it can sometimes be misleading in the context of imbalanced class distributions. Thus, I complement accuracy with the confusion matrix and ROC curve analysis to ensure a comprehensive evaluation.
 
 Through this analysis, I aim to uncover the galaxy properties that are most predictive of sSFR gradients, contributing to our understanding of galaxy evolution and the underlying mechanisms of star formation.
 
 ### 3. Results
-
-In  I provide the code used to train and fit the data. I perform a gridsearch cross validation with 5 folds to find the best fitting hyperparatemeters. The ranges explored here are quite small, sicne I found in a prelimenary analysis that the increase in performance was very small (+ 0.2 in accuracy) with the computation time of the search being over 10 times the one presented here. For this reason, in the interes of efficient computing, I show a small grid search. 
 
 In [this notebook](https://github.com/martasframos/Data-Projects/blob/main/Galaxy_gradients/sSFR_gradients.ipynb), I provide the code used to train and fit the model on the dataset. I perform a **Grid Search Cross-Validation** with 5 folds to identify the best-fitting hyperparameters for the model.
 
@@ -106,7 +104,7 @@ In [this notebook](https://github.com/martasframos/Data-Projects/blob/main/Galax
 The ranges explored for the hyperparameters are relatively small. This decision stems from preliminary analyses, which indicated that increasing the hyperparameter ranges yielded only marginal improvements in model performance (approximately +0.2 in accuracy). However, the computational time required for a broader search was significantly higher—over ten times greater than the current configuration.
 
 **Rationale for a Smaller Grid Search**
-Given the trade-off between computational efficiency and performance gains, I opted to conduct a more focused grid search. This approach ensures that the model training process remains efficient without sacrificing significant predictive performance. The results obtained from this smaller grid search will serve as a reliable foundation for understanding the model's behavior and guiding future optimization efforts.
+Given the trade-off between computational efficiency and performance gains, I opted to conduct a more focused grid search. This approach ensures that the model training process remains efficient without sacrificing significant predictive performance. The results obtained from this smaller grid search will serve as a reliable foundation for understanding the model's behaviour and guiding future optimization efforts.
 
 After fitting the model, the accuracy achieved was **0.63**. Below are additional performance evaluations that further illustrate the model's effectiveness.
 
@@ -132,7 +130,7 @@ However, **permutation importance** offers an alternative approach that better c
 
 **1- Model-Agnostic:** Permutation importance can be applied to any model (not just tree-based models like Random Forest), making it more versatile.
 
-**2- Captures Interactions:** Unlike the built-in feature importance in Random Forest, permutation importance can capture complex interactions between features by measuring how sensitive the model is to changes in each feature. It is a measure of how much the performance of the model (in this case the AUC) descrease when a feature is randomly shuffled. This means that permutation importance scores show the change in accuracy.
+**2- Captures Interactions:** Unlike the built-in feature importance in Random Forest, permutation importance can capture complex interactions between features by measuring how sensitive the model is to changes in each feature. It is a measure of how much the performance of the model (in this case the AUC) decrease when a feature is randomly shuffled. This means that permutation importance scores show the change in accuracy.
 
 **3- Considers Overfitting:** Random Forest feature importance can sometimes be biased towards high cardinality features (those with many unique values), while permutation importance is less prone to such biases because it’s directly tied to the model’s performance.
 
@@ -191,7 +189,7 @@ Date: 07/2024
 ### 1. Introduction
 As I embarked on my journey into the world of data science during my Ph.D., one of my goals was to apply the analytical skills I acquired in real-world contexts. A perfect opportunity to demonstrate this came with the Iris dataset, a classic in the fields of machine learning and statistics. This dataset contains 150 samples of iris flowers, characterized by four features: sepal length, sepal width, petal length, and petal width. Each flower belongs to one of three species: Setosa, Versicolor, or Virginica.
 
-My motivation for analyzing this dataset was twofold: to explore the relationships among its features and to showcase the data science techniques I’ve learned. I wanted to highlight how these skills can be applied effectively to solve practical problems.
+My motivation for analysing this dataset was twofold: to explore the relationships among its features and to showcase the data science techniques I’ve learned. I wanted to highlight how these skills can be applied effectively to solve practical problems.
 
 #### 1.1 Motivation
 This analysis is not just about crunching numbers; it’s about uncovering insights and building models that can help us understand and classify species based on their characteristics. By working through this dataset, I aimed to demonstrate my grasp of various data science methodologies, including visualization, clustering, classification, and statistical testing. My hope was to illustrate the versatility of these techniques and their relevance to real-world applications.
@@ -201,10 +199,10 @@ The data used here is publicly available at the [UCI Machine Learning Repository
 The Iris dataset is a widely used benchmark dataset in machine learning and data analysis. It contains measurements of iris flowers across three species, enabling us to explore various features and relationships within the data.
 
 **Features**
-- Sepal Length: Length of the sepal in centimeters.
-- Sepal Width: Width of the sepal in centimeters.
-- Petal Length: Length of the petal in centimeters.
-- Petal Width: Width of the petal in centimeters.
+- Sepal Length: Length of the sepal in cm.
+- Sepal Width: Width of the sepal in cm.
+- Petal Length: Length of the petal in cm.
+- Petal Width: Width of the petal in cm.
 - Species: Categorical variable indicating the species of iris flowers (Setosa, Versicolor, Virginica).
 
 #### 2.1 Analysis
@@ -221,18 +219,20 @@ A pairplot visualizes pairwise relationships between the features, colored by sp
 
 ![Example Image](./Iris_Dataset/Pair_Plot.png)
 
-A pairplot visualizes pairwise relationships between the features, colored by species. This graph allows us to:
+This graph allows us to: 
 
-Observe the distributions and relationships of features against one another.
-Identify potential clusters and separations among the three species based on feature measurements.
+1- Observe the distributions and relationships of features against one another.
+
+2- Identify potential clusters and separations among the three species based on feature measurements.
+
 The pairplot clearly shows that Setosa is distinctly separated from Versicolor and Virginica, especially in the petal length and width dimensions. This separation indicates that KMeans or other clustering methods might effectively classify these species.
 
-Moreover, the pairplot reveals overlapping regions between Versicolor and Virginica, particularly in petal measurements. This suggests that while these two species may share some similarities, there are still distinct characteristics that can be leveraged for classification purposes. The visualization aids in assessing the feature importance and understanding the dimensions that contribute most to the classification task. Analyzing these relationships further may inform feature selection or engineering steps to enhance model performance.
+Moreover, the pairplot reveals overlapping regions between Versicolor and Virginica, particularly in petal measurements. This suggests that while these two species may share some similarities, there are still distinct characteristics that can be leveraged for classification purposes. The visualization aids in assessing the feature importance and understanding the dimensions that contribute most to the classification task. Analysing these relationships further may inform feature selection or engineering steps to enhance model performance.
 
 Ultimately, the insights derived from the pairplot can guide future explorations, such as tuning clustering algorithms or investigating additional features to improve the classification accuracy of the species.
 
 ##### 2.1.2. Correlation Heatmap
-The correlation heatmap displays the correlation coefficients between different features. The color intensity indicates the strength of correlation, where darker colors represent stronger relationships.
+The correlation heatmap displays the correlation coefficients between different features. The colour intensity indicates the strength of correlation, where darker colours represent stronger relationships.
 
 ![Example Image](./Iris_Dataset/Correlation_heat_map.png)
 
@@ -244,7 +244,7 @@ The correlation heatmap displays the correlation coefficients between different 
 
 **Weaker Correlation:** Conversely, sepal width has a weaker correlation with other features, suggesting it may not be as influential in determining the species as the other measurements.
 
-Understanding these correlations is vital as it informs our grasp of how features are interrelated, which can influence the choice of algorithms and models for prediction tasks. Features that are highly correlated may not provide additional information if included together in modeling, potentially leading to multicollinearity issues. This knowledge can guide feature selection, helping to build more efficient and interpretable models.
+Understanding these correlations is vital as it informs our grasp of how features are interrelated, which can influence the choice of algorithms and models for prediction tasks. Features that are highly correlated may not provide additional information if included together in modelling, potentially leading to multicollinearity issues. This knowledge can guide feature selection, helping to build more efficient and interpretable models.
 
 ##### 2.1.3. Violin Plot
 The violin plot presents the distribution of petal lengths across species. It combines aspects of a box plot with a density plot, allowing us to see not only the summary statistics but also the distribution shape.
@@ -257,7 +257,7 @@ The violin plot presents the distribution of petal lengths across species. It co
 
 **Broader Ranges for Other Species:** Versicolor and Virginica show broader ranges of petal lengths, with Virginica typically having longer petals than Versicolor. This overlap suggests that while there are some common characteristics among these species, there are still measurable differences that can assist in classification.
 
-The violin plot is beneficial as it helps highlight the differences in distribution between species, indicating how well-defined the species categories are based on petal length. By visualizing the density of the data, we gain insights into the variability and central tendencies of the measurements, which are critical for any subsequent modeling efforts.
+The violin plot is beneficial as it helps highlight the differences in distribution between species, indicating how well-defined the species categories are based on petal length. By visualizing the density of the data, we gain insights into the variability and central tendencies of the measurements, which are critical for any subsequent modelling efforts.
 
 ##### 2.1.4. Box Plot
 The box plot visualizes the distribution of sepal widths for each species. It highlights the median, quartiles, and potential outliers.
@@ -270,11 +270,11 @@ The box plot visualizes the distribution of sepal widths for each species. It hi
 
 **Outliers in Versicolor:** There are a few outliers in the Versicolor group, suggesting that some measurements fall outside the typical range. Identifying these outliers is crucial, as they may indicate variability within the species or measurement errors that could impact model performance.
 
-Box plots are essential for understanding the spread and center of the data, which can inform decisions on data preprocessing and model selection. The visualization provides a quick overview of the distribution characteristics, enabling us to make informed choices regarding feature transformations or the handling of outliers.
+Box plots are essential for understanding the spread and centre of the data, which can inform decisions on data preprocessing and model selection. The visualization provides a quick overview of the distribution characteristics, enabling us to make informed choices regarding feature transformations or the handling of outliers.
 
 ##### 2.1.5. KMeans Clustering
 
-To explore the natural groupings within the dataset, I applied K-Means clustering with three clusters (representing the three species). The clustering was visualized through a scatter plot based on sepal length and sepal width, colored by the cluster assignment.
+To explore the natural groupings within the dataset, I applied K-Means clustering with three clusters (representing the three species). The clustering was visualized through a scatter plot based on sepal length and sepal width, coloured by the cluster assignment.
 
 A scatter plot visualizes the clusters based on sepal length and width. I evaluated the clustering using the silhouette score, which measured how well-separated the clusters were. The silhouette score for K-Means clustering was 0.55, indicating moderately well-defined clusters. 
 
@@ -310,13 +310,13 @@ The pairwise kernel density estimation (KDE) plot visualizes the distributions o
 
 **Distribution Shapes:** The KDE plots allow us to observe the shape of the distributions for each feature pair. For instance, petal length and width demonstrate distinct bimodal distributions, indicating the different species can be separated based on these measurements.
 
-**Species Separation:** By coloring the KDE plots according to species, we can easily identify how well the features differentiate between the three iris species (Setosa, Versicolor, Virginica). Setosa shows a clear and distinct distribution in petal dimensions compared to the other two species, which tend to overlap more.
+**Species Separation:** By colouring the KDE plots according to species, one can easily identify how well the features differentiate between the three iris species (Setosa, Versicolor, Virginica). Setosa shows a clear and distinct distribution in petal dimensions compared to the other two species, which tend to overlap more.
 
 **Density Peaks:** The KDE provides a smooth representation of data density, highlighting where the concentrations of points lie. For example, the density contours reveal that Setosa has a concentration of data points around specific feature values, while Versicolor and Virginica have wider spreads, suggesting more variability in their measurements.
 
 **Multivariate Relationships:** The pairwise KDE plot emphasizes the interactions between features. For example, the relationship between sepal length and sepal width might show a different distribution than between petal length and width. Observing these relationships helps in understanding how these features interact and influence classification.
 
-**Usefulness for Model Selection:** The insights gained from the KDE plots can inform decisions on which features to include in predictive modeling. Features that show clear separations between species may be more beneficial for classification tasks.
+**Usefulness for Model Selection:** The insights gained from the KDE plots can inform decisions on which features to include in predictive modelling.. Features that show clear separations between species may be more beneficial for classification tasks.
 
 ##### 2.1.8 t-SNE Visualization
 
@@ -336,7 +336,7 @@ This new feature captures interactions between sepal dimensions, which might hel
 
 This feature reflects the relationship between petal dimensions and may provide additional context for classification tasks.
 
-After feature engineering, I utilized t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the high-dimensional feature space in a two-dimensional format.
+After feature engineering, I utilized t-Distributed Stochastic Neighbour Embedding (t-SNE) to visualize the high-dimensional feature space in a two-dimensional format.
 
 The t-SNE technique focuses on preserving local relationships, making it particularly effective for exploring complex datasets. 
 
@@ -354,7 +354,7 @@ The t-SNE visualization provides valuable insights into the structure of the dat
 
 #### 3 Conclusion
 
-The analysis of the Iris dataset has provided valuable insights into the characteristics and relationships of different iris species based on various features. This project aimed to explore the data through visualizations, perform clustering and dimensionality reduction, and enhance predictive modeling through feature engineering. Below are the key conclusions drawn from the study:
+The analysis of the Iris dataset has provided valuable insights into the characteristics and relationships of different iris species based on various features. This project aimed to explore the data through visualizations, perform clustering and dimensionality reduction, and enhance predictive modelling through feature engineering. Below are the key conclusions drawn from the study:
 
 1- Data Visualization:
 
@@ -412,7 +412,7 @@ This project includes:
 Built using **Dash** and **Plotly**, this dashboard facilitates interactive visualization of climate data, making it easier to track changes over time and across regions.
 
 ### 2. Project Purpose
-The primary goal of this project is to create a visually appealing and informative dashboard that allows users to analyze temperature trends across different countries. It aims to highlight the impact of climate change by showcasing average temperature changes from the first recorded year to the most recent year.
+The primary goal of this project is to create a visually appealing and informative dashboard that allows users to analyse temperature trends across different countries. It aims to highlight the impact of climate change by showcasing average temperature changes from the first recorded year to the most recent year.
 
 
 #### Dataset
