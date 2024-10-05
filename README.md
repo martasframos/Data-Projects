@@ -15,6 +15,7 @@ In addition to my academic endeavors, I have undertaken projects that utilise re
 - [Machine Learning to Predict Galaxy Gradients](#predicting-galaxy-gradients-with-machine-learning )
 - [Analysis of the Iris Dataset](#data-analysis-report-on-the-iris-dataset)
 - [Global Temperature Data Dashboard](#global-temperature-data-dashboard)
+
 ---
 ## Computing Annulus Regions in MaNGA Galaxies
 Date: 05/2022
