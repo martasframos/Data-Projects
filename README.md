@@ -70,8 +70,11 @@ This spatial analysis allows us to explore the distribution of sSFR gradients ac
 The sSFR gradients are categorized into three distinct classes based on their slope characteristics:
 
 **Negative Gradient:** Indicates a decrease in sSFR as the distance from the galaxy center increases.
+
 **Shallow Gradient:** Represents a minimal change in sSFR across the annulus regions.
+
 **Positive Gradient:** Suggests an increase in sSFR as one moves outward from the center of the galaxy.
+
 To classify these gradients, I utilise **Random Forest Classification**, a robust ensemble learning method that excels at handling complex interactions between variables and is less prone to overfitting. This model enables us to assign galaxies to one of the three categories based on various predictive features, including color and Sérsic Index.
 
 **Feature Importance**
@@ -81,8 +84,11 @@ After training the model, we assess **feature importance** to identify which cha
 We employ several metrics to evaluate the performance of our classification model:
 
 **Confusion Matrix:** This matrix provides a detailed overview of the model's predictions, illustrating true positives, true negatives, false positives, and false negatives.
+
 **ROC Curve:** The Receiver Operating Characteristic (ROC) curve depicts the balance between sensitivity (true positive rate) and specificity (false positive rate) across different threshold settings.
+
 **Accuracy:** While accuracy serves as a general measure of model performance, it can sometimes be misleading in the context of imbalanced class distributions. Thus, we complement accuracy with the confusion matrix and ROC curve analysis to ensure a comprehensive evaluation.
+
 Through this analysis, I aim to uncover the galaxy properties that are most predictive of sSFR gradients, contributing to our understanding of galaxy evolution and the underlying mechanisms of star formation.
 
 ### 3. Results
@@ -118,12 +124,19 @@ After training the model, I assess **feature importance** to identify which feat
 However, **permutation importance** offers an alternative approach that better captures the impact of each feature in a model-agnostic way. Rather than relying on the internal structure of the model, permutation importance measures the decrease in the model’s performance when the values of a feature are randomly shuffled, thereby breaking its relationship with the target variable. This method provides a more reliable and unbiased estimate of feature importance.
 
 **Why Use Permutation Importance?**
+
 **1- Model-Agnostic:** Permutation importance can be applied to any model (not just tree-based models like Random Forest), making it more versatile.
-**2- Captures Interactions:** Unlike the built-in feature importance in Random Forest, permutation importance can capture complex interactions between features by measuring how sensitive the model is to changes in each feature. It is a measure of how much the performance of the model (in this case the AUC) descrease when a feature is randomly shuffled. This means that permutation importance scores show the change in accuracy. 
+
+**2- Captures Interactions:** Unlike the built-in feature importance in Random Forest, permutation importance can capture complex interactions between features by measuring how sensitive the model is to changes in each feature. It is a measure of how much the performance of the model (in this case the AUC) descrease when a feature is randomly shuffled. This means that permutation importance scores show the change in accuracy.
+
 **3- Considers Overfitting:** Random Forest feature importance can sometimes be biased towards high cardinality features (those with many unique values), while permutation importance is less prone to such biases because it’s directly tied to the model’s performance.
+
 **4- Considers Testing Data:** Permutation importance is usually calculated on unseen testing data, offering a better reflection of how features contribute to generalization rather than just model training.
+
 **Drawbacks of Permutation Importance**
+
 **1- Computation Time:** It can be computationally expensive, especially when working with large datasets, as it requires repeated evaluations of the model on perturbed data.
+
 **2- Correlation Sensitivity:** If two features are highly correlated, permutation importance can underestimate their importance because shuffling one may not fully break its relationship with the target variable (the correlated feature still contains similar information).
 
 The feature importance score is shown bellow:
