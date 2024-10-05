@@ -88,14 +88,6 @@ def Ellipse_(radius, minor):
     will be used combine all the spaxels and obtain the spectra up to a certain radius. This takes as input
     the major axis (radius), minor axis and the position angle.
 
-    WARNING: 
-    --------
-    This function has been written during the first year of my PhD, it works, but I have no idea how. To write proper 
-    documentation, I need to go back to this function and look at is very carfully. The points are plotted on the right
-    place, whoch is in the centre of the spaxe as one would intend! Variable names make no sense, and there are no 
-    comments or previous documentation that has been made to understand why the function 'ell_constrains' is being used
-    here. (Last Updated: 11/10/23)
-
     '''
     
     length = np.arange(-radius - 0.25, radius + 0.25,0.5) #Major axis of the ellipse. Spaxels have side 0.25"
