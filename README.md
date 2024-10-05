@@ -12,6 +12,8 @@ In addition to my academic endeavors, I have undertaken projects that utilise re
 
 ## Table of Contents
 - [Spectra of MaNGA galaxies](#computing-annulus-regions-in-maNGA-galaxies)
+- [Machine Learning to Predict Galaxy Gradients](#predicting-galaxy-gradients-with-machine-learning )
+- [Analysis of the Iris Dataset](#data-analysis-report-on-the-iris-dataset)
 - [Global Temperature Data Dashboard](#global-temperature-data-dashboard)
 ---
 ## Computing Annulus Regions in MaNGA Galaxies
@@ -58,7 +60,7 @@ The creation of annular regions was successful, and the results demonstrate the 
 - FITS (Flexible Image Transport System)
 ---
 ## Predicting Galaxy Gradients with Machine Learning 
-
+Dat2 01/2024
 ### 1. Introduction
 
 In this study, I analyze the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the center of the galaxy, with the property values represented on the y-axis and the normalized distance `r/R_e` on the x-axis, where `R_e` denotes the effective radius of the galaxy.
@@ -199,45 +201,181 @@ In this analysis, I performed the following steps:
 **Clustering with K-Means** to uncover patterns and groupings within the data.
 **Dimensionality reduction using PCA and t-SNE** to visualize the data in 2D space.
 
+The code for this can be found in [this notebook](https://github.com/martasframos/Data-Projects/blob/main/Iris_Dataset/Iris_dataset_analysis.ipynb)
+
 ##### 2.1.1. Data Exploration and Visualization:
-The first step of the analysis was to visualize the relationships between different features and species. Using Seaborn's pairplot, I examined the pairwise relationships between the features, segmented by species. The plot demonstrated clear separations between the setosa species and the other two, especially when considering petal length and petal width.
+A pairplot visualizes pairwise relationships between the features, colored by species. 
 
-Additionally, I created a correlation heatmap to assess the linear relationships between the features. This revealed that petal length and petal width had the strongest positive correlation, highlighting their significance in distinguishing between species.
+![Example Image](./Iris_Dataset/Pair_Plot.jpg)
 
-Key observations:
+A pairplot visualizes pairwise relationships between the features, colored by species. This graph allows us to:
 
-Petal features (length and width) show stronger correlations with species than sepal features.
-The setosa species is distinctly separated from versicolor and virginica.
+Observe the distributions and relationships of features against one another.
+Identify potential clusters and separations among the three species based on feature measurements.
+The pairplot clearly shows that Setosa is distinctly separated from Versicolor and Virginica, especially in the petal length and width dimensions. This separation indicates that KMeans or other clustering methods might effectively classify these species.
 
+Moreover, the pairplot reveals overlapping regions between Versicolor and Virginica, particularly in petal measurements. This suggests that while these two species may share some similarities, there are still distinct characteristics that can be leveraged for classification purposes. The visualization aids in assessing the feature importance and understanding the dimensions that contribute most to the classification task. Analyzing these relationships further may inform feature selection or engineering steps to enhance model performance.
 
+Ultimately, the insights derived from the pairplot can guide future explorations, such as tuning clustering algorithms or investigating additional features to improve the classification accuracy of the species.
 
+##### 2.1.2. Correlation Heatmap
+The correlation heatmap displays the correlation coefficients between different features. The color intensity indicates the strength of correlation, where darker colors represent stronger relationships.
 
+![Example Image](./Iris_Dataset/Correlation_heat_map.jpg)
 
-##### 2.1.2. Clustering with K-Means:
+**Key Insights:**
+
+**Strong Positive Correlation:** There is a strong positive correlation between petal length and petal width, with a correlation coefficient close to 1. This suggests that as the petal length increases, the petal width tends to increase as well, indicating a consistent growth pattern in these dimensions.
+
+**Moderate Correlation:** Sepal length also shows a moderate positive correlation with petal length and width. This suggests that the size of the sepals may also provide some indication of the size of the petals, although the relationship is not as strong as that observed between petal dimensions.
+
+**Weaker Correlation:** Conversely, sepal width has a weaker correlation with other features, suggesting it may not be as influential in determining the species as the other measurements.
+
+Understanding these correlations is vital as it informs our grasp of how features are interrelated, which can influence the choice of algorithms and models for prediction tasks. Features that are highly correlated may not provide additional information if included together in modeling, potentially leading to multicollinearity issues. This knowledge can guide feature selection, helping to build more efficient and interpretable models.
+
+##### 2.1.3. Violin Plot
+The violin plot presents the distribution of petal lengths across species. It combines aspects of a box plot with a density plot, allowing us to see not only the summary statistics but also the distribution shape.
+
+![Example Image](./Iris_Dataset/violin_plot_petal_length.jpg)
+
+**Key Insights:**
+
+**Distinct Distribution of Setosa:** Setosa has a smaller range of petal lengths, with a clear peak around 1.5 cm. This indicates a well-defined and consistent measurement among Setosa flowers, making it easier to distinguish this species based on petal length.
+
+**Broader Ranges for Other Species:** Versicolor and Virginica show broader ranges of petal lengths, with Virginica typically having longer petals than Versicolor. This overlap suggests that while there are some common characteristics among these species, there are still measurable differences that can assist in classification.
+
+The violin plot is beneficial as it helps highlight the differences in distribution between species, indicating how well-defined the species categories are based on petal length. By visualizing the density of the data, we gain insights into the variability and central tendencies of the measurements, which are critical for any subsequent modeling efforts.
+
+##### 2.1.4. Box Plot
+The box plot visualizes the distribution of sepal widths for each species. It highlights the median, quartiles, and potential outliers.
+
+![Example Image](./Iris_Dataset/boxplot_sepal_width.jpg)
+
+**Key Insights:**
+
+**Wider Sepal Width for Setosa:** Setosa has the widest sepal widths compared to Versicolor and Virginica. This suggests that the measurements for Setosa are not only distinct in petal dimensions but also in sepal dimensions, reinforcing its classification.
+
+**Outliers in Versicolor:** There are a few outliers in the Versicolor group, suggesting that some measurements fall outside the typical range. Identifying these outliers is crucial, as they may indicate variability within the species or measurement errors that could impact model performance.
+
+Box plots are essential for understanding the spread and center of the data, which can inform decisions on data preprocessing and model selection. The visualization provides a quick overview of the distribution characteristics, enabling us to make informed choices regarding feature transformations or the handling of outliers.
+
+##### 2.1.5. KMeans Clustering
+
 To explore the natural groupings within the dataset, I applied K-Means clustering with three clusters (representing the three species). The clustering was visualized through a scatter plot based on sepal length and sepal width, colored by the cluster assignment.
 
-I evaluated the clustering using the silhouette score, which measured how well-separated the clusters were. The silhouette score for K-Means clustering was 0.55, indicating moderately well-defined clusters.
+A scatter plot visualizes the clusters based on sepal length and width. I evaluated the clustering using the silhouette score, which measured how well-separated the clusters were. The silhouette score for K-Means clustering was 0.55, indicating moderately well-defined clusters. 
 
-Key insights:
+![Example Image](./Iris_Dataset/kmeans_clustering.jpg)
 
-K-Means clustering reasonably grouped the data, although versicolor and virginica showed some overlap.
-The model successfully identified setosa as a distinct cluster.
+**Key Insights:**
 
+**Effective Distinction of Species:** The KMeans algorithm effectively distinguishes Setosa from Versicolor and Virginica. The clusters visually illustrate how well the algorithm has captured the underlying patterns in the data.
 
-##### 2.1.3. Dimensionality Reduction with PCA and t-SNE:
+**Evaluating Clustering Quality:** The silhouette score, a measure of how similar an object is to its own cluster compared to other clusters, indicates the quality of clustering. A high silhouette score reflects well-defined clusters, providing assurance that the KMeans algorithm has effectively identified the natural groupings in the data.
+
+Evaluating clustering performance with silhouette scores helps determine if the chosen number of clusters is appropriate and whether the data can be meaningfully categorized. This process informs future explorations, potentially guiding the selection of alternative clustering algorithms or adjusting the parameters of the KMeans algorithm for better results.
+
+##### 2.1.6. PCA for Visualization
 Next, I performed Principal Component Analysis (PCA) to reduce the dataset’s dimensionality and visualize it in a two-dimensional space. PCA identified the two most important components that accounted for a significant portion of the variance in the dataset.
 
-Through PCA, the species were visualized in 2D, with setosa distinctly separated. However, the overlap between versicolor and virginica persisted.
+![Example Image](./Iris_Dataset/pca_iris_dataset.jpg)
 
-To complement PCA, I applied t-Distributed Stochastic Neighbor Embedding (t-SNE), a nonlinear dimensionality reduction technique, to capture complex relationships between the samples. The t-SNE visualization revealed a more nuanced separation between the species, though some overlap remained.
+**Key Insights:**
 
-Key findings:
+**Clear Separation Between Species:** The scatter plot shows clear separation between the three species, indicating that PCA has effectively captured the variance in the data while reducing its dimensionality. This separation aids in visually confirming the distinct groupings observed in previous analyses.
 
-PCA provided a quick way to identify the most important features.
-t-SNE offered a more intricate view of how species relate to each other in multidimensional space.
+**Variance Explained by Components:** Most of the variance in the dataset can be explained by the first two principal components, which simplifies understanding the data. This capability allows researchers to focus on the most informative dimensions without losing significant detail, making PCA a valuable tool for data exploration.
+
+PCA is particularly useful for visualizing high-dimensional data, allowing insights into the underlying structure without losing too much information. This method provides a foundational understanding that can be built upon with more complex analyses or machine learning models.
+
+##### 2.1.7. Pairwise Kernel Density Estimation (KDE)
+The pairwise kernel density estimation (KDE) plot visualizes the distributions of feature pairs in the Iris dataset, providing insights into the relationships between features for different species.
+
+![Example Image](./Iris_Dataset/Pairwise_kernel_density.jpg)
+
+**Key Insights:**
+
+**Distribution Shapes:** The KDE plots allow us to observe the shape of the distributions for each feature pair. For instance, petal length and width demonstrate distinct bimodal distributions, indicating the different species can be separated based on these measurements.
+
+**Species Separation:** By coloring the KDE plots according to species, we can easily identify how well the features differentiate between the three iris species (Setosa, Versicolor, Virginica). Setosa shows a clear and distinct distribution in petal dimensions compared to the other two species, which tend to overlap more.
+
+**Density Peaks:** The KDE provides a smooth representation of data density, highlighting where the concentrations of points lie. For example, the density contours reveal that Setosa has a concentration of data points around specific feature values, while Versicolor and Virginica have wider spreads, suggesting more variability in their measurements.
+
+**Multivariate Relationships:** The pairwise KDE plot emphasizes the interactions between features. For example, the relationship between sepal length and sepal width might show a different distribution than between petal length and width. Observing these relationships helps in understanding how these features interact and influence classification.
+
+**Usefulness for Model Selection:** The insights gained from the KDE plots can inform decisions on which features to include in predictive modeling. Features that show clear separations between species may be more beneficial for classification tasks.
+
+##### 2.1.8 t-SNE Visualization
+
+**Feature Engineering**
+
+In this analysis, I created two new features to enhance the model's predictive capabilities:
+
+1. Sepal Length Width: This feature is the product of sepal length and sepal width: 
+
+$$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $$
+
+This new feature captures interactions between sepal dimensions, which might help in distinguishing between different species of iris flowers.
+
+2. **Petal Length Width**: Similarly, this feature is obtained by multiplying petal length and petal width:
+
+   $$ \text{Petal Length Width} = \text{Petal Length} \times \text{Petal Width} $$
+
+This feature reflects the relationship between petal dimensions and may provide additional context for classification tasks.
+
+After feature engineering, I utilized t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the high-dimensional feature space in a two-dimensional format.
+
+The t-SNE technique focuses on preserving local relationships, making it particularly effective for exploring complex datasets. 
+
+![Example Image](./Iris_Dataset/tSNE_iris_dataset.jpg)
+
+**Key Insights:**
+
+**Cluster Separation:** The t-SNE plot visually demonstrates the clustering of the three iris species. Setosa is distinctly separated from Versicolor and Virginica, indicating that the features used are effective in distinguishing between these species.
+
+**Intricate Patterns:** The plot reveals intricate patterns that may not be apparent in higher-dimensional spaces, showcasing how different species group together based on feature similarities.
+
+**Local Relationships:** t-SNE effectively preserves local relationships, allowing us to observe the density and distribution of points within clusters.
+
+The t-SNE visualization provides valuable insights into the structure of the data and the effectiveness of our feature engineering efforts in distinguishing between different species of iris flowers.
+
+#### 3 Conclusion
+
+The analysis of the Iris dataset has provided valuable insights into the characteristics and relationships of different iris species based on various features. This project aimed to explore the data through visualizations, perform clustering and dimensionality reduction, and enhance predictive modeling through feature engineering. Below are the key conclusions drawn from the study:
+
+1- Data Visualization:
+
+Various visualizations, including pairwise KDE plots, correlation heatmaps, violin plots, and box plots, highlighted the distinct features and distributions of each iris species. Notably, the pairwise KDE plot effectively illustrated the relationships between features, allowing for a better understanding of how species can be distinguished based on morphological measurements.
+
+2- Feature Correlation:
+
+The correlation heatmap revealed strong relationships among features, particularly between petal length and petal width. These insights are crucial for selecting the appropriate algorithms and models for classification tasks, as features that are strongly correlated may not provide additional predictive power.
+
+3- Clustering with KMeans:
+
+The application of KMeans clustering effectively segregated the iris species, demonstrating the algorithm's capability to classify distinct groups based on sepal and petal dimensions. The silhouette score indicated a strong clustering structure, validating the choice of three clusters corresponding to the species.
+
+4- Dimensionality Reduction:
+
+Techniques like PCA and t-SNE were employed to visualize high-dimensional data. PCA allowed for the simplification of complex data, while t-SNE provided an intricate view of the species' distribution, revealing non-linear relationships that might not be visible in the original feature space.
+
+5- Feature Engineering:
+
+The creation of new features, specifically the product of sepal length and width and petal length and width, enhanced the model's predictive capabilities. Feature engineering is essential in machine learning, as it allows for the capture of complex interactions that original features might not convey.
+
+6- Model Evaluation:
+
+The evaluation of feature importance, including both traditional importance and permutation importance, provided insights into which features most significantly impacted model predictions. This understanding is crucial for interpreting model outputs and gaining deeper insights into the biological processes governing iris species.
+
+7- Applications and Future Work:
+
+The findings from this analysis have broader implications in fields such as botany, ecology, and machine learning. Future work could involve applying these techniques to larger and more complex datasets or exploring additional machine learning algorithms to improve classification accuracy.
+
+In summary, this project successfully demonstrated the power of data visualization, feature engineering, and clustering techniques in understanding and predicting species classifications in the Iris dataset. The insights gained contribute to a deeper understanding of the biological differences between species and highlight the importance of data-driven approaches in scientific research.
 
 
 
+---
 ## Global Temperature Data Dashboard
 Date: 09/2024
 ### 1. Project Overview
