@@ -206,7 +206,7 @@ The code for this can be found in [this notebook](https://github.com/martasframo
 ##### 2.1.1. Data Exploration and Visualization:
 A pairplot visualizes pairwise relationships between the features, colored by species. 
 
-![Example Image](./Iris_Dataset/Pair_Plot.jpg)
+![Example Image](./Iris_Dataset/Pair_Plot.png)
 
 A pairplot visualizes pairwise relationships between the features, colored by species. This graph allows us to:
 
@@ -221,7 +221,7 @@ Ultimately, the insights derived from the pairplot can guide future explorations
 ##### 2.1.2. Correlation Heatmap
 The correlation heatmap displays the correlation coefficients between different features. The color intensity indicates the strength of correlation, where darker colors represent stronger relationships.
 
-![Example Image](./Iris_Dataset/Correlation_heat_map.jpg)
+![Example Image](./Iris_Dataset/Correlation_heat_map.png)
 
 **Key Insights:**
 
@@ -291,7 +291,7 @@ PCA is particularly useful for visualizing high-dimensional data, allowing insig
 ##### 2.1.7. Pairwise Kernel Density Estimation (KDE)
 The pairwise kernel density estimation (KDE) plot visualizes the distributions of feature pairs in the Iris dataset, providing insights into the relationships between features for different species.
 
-![Example Image](./Iris_Dataset/Pairwise_kernel_density.jpg)
+![Example Image](./Iris_Dataset/Pairwise_kernel_density.png)
 
 **Key Insights:**
 
