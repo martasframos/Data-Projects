@@ -130,16 +130,20 @@ The feature importance score is shown bellow:
 ![Example Image](./Galaxy_gradients/Feature_importance.jpg)
 
 As shown in the notebook, the permutation importance shows a different ranking:
-Permutation Importance:
-sSFR             0.213
-Sersic Index     0.066
-color_g_r        0.066
-color_g_i        0.035
-Re_kpc           0.032
-Mass             0.019
-Metallicity      0.019
-Redshift         0.012
-Log_surf_density  0.008
+**Permutation Importance**
+
+| Feature           | Importance Score |
+|-------------------|------------------|
+| sSFR              | 0.213            |
+| Sérsic Index      | 0.066            |
+| color_g_r         | 0.066            |
+| color_g_i         | 0.035            |
+| Re_kpc            | 0.032            |
+| Mass              | 0.019            |
+| Metallicity       | 0.019            |
+| Redshift          | 0.012            |
+| Log_surf_density  | 0.008            |
+
 
 Here, sSFR, Sérsic Index and g-r colour being the top 3 features that are most predictive of the sSFR gradient. 
 
