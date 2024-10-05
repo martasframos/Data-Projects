@@ -20,18 +20,19 @@ In addition to my academic endeavors, I have undertaken projects that utilise re
 ## Computing Annulus Regions in MaNGA Galaxies
 Date: 05/2022
 ### 1. Introduction
-The MaNGA (Mapping Nearby Galaxies at Apache Point Observatory) survey has provided spatially resolved data for over 10,000 galaxies as part of the fourth generation of the Sloan Digital Sky Survey (SDSS). This type of data offers valuable insights into the physical processes governing galaxy formation and evolution. The [MaNGA data analysis pipeline](https://www.sdss4.org/dr17/manga/manga-analysis-pipeline/) (DAP) provides 2-D maps of various galaxy properties, such as Hα flux, D4000, and stellar velocity maps. The power of spatially resolved galaxy surveys lies in the ability to investigate different regions of the galaxy separately. Analyzing annulus regions within galaxies allows astronomers to study variations in stellar populations, gas dynamics, and chemical enrichment across different regions of the galaxy.
+The MaNGA (Mapping Nearby Galaxies at Apache Point Observatory) survey has provided spatially resolved data for over 10,000 galaxies as part of the fourth generation of the Sloan Digital Sky Survey (SDSS). This type of data offers valuable insights into the physical processes governing galaxy formation and evolution. The [MaNGA data analysis pipeline](https://www.sdss4.org/dr17/manga/manga-analysis-pipeline/) (DAP) offers 2-D maps of various galaxy properties, including Hα flux, D4000, and stellar velocity maps. The power of spatially resolved galaxy surveys lies in the ability to investigate different regions of the galaxy separately.
+
+By analyzing annulus regions within galaxies, astronomers can study variations in stellar populations, gas dynamics, and chemical enrichment across different parts of the galaxy.
 
 #### 1.1 Goal of This Project
-The main objective of my project is to create distinct annular regions within galaxies to facilitate the extraction of their spectral data. Spectroscopy is a vital tool in astronomy, as it allows us to obtain critical information about galaxies, such as stellar mass, star formation rates, stellar ages, and metallicity.
+The main objective of this project is to create distinct annular regions within galaxies to facilitate the extraction of their spectral data. Spectroscopy is a vital tool in astronomy, providing critical information about galaxies, such as stellar mass, star formation rates, stellar ages, and metallicity.
 
-In order to compute the radial profiles of galaxies, I first need to define and identify various annular regions around the galactic center. This involves determining which spaxels (the spatial pixels in a spectroscopic data cube) fall within each of these annulus regions. By accurately categorizing these spaxels, I can prepare for the systematic extraction of spectral data from each region in future analyses.
+To compute the radial profiles of galaxies, I first need to define and identify various annular regions around the galactic center. This involves determining which spaxels (the spatial pixels in a spectroscopic data cube) fall within each of these annular regions. By accurately categorizing these spaxels, I can prepare for the systematic extraction of spectral data from each region in future analyses.
 
 Here’s a brief overview of my approach:
 
-**Region Definition:** I will establish clear criteria for defining the annular regions within the galaxy.
-
-**Spaxel Identification:** I’ll develop algorithms to identify which spaxels lie within each of the defined annulus regions.
+- **Region Definition:** Establish clear criteria for defining the annular regions within the galaxy.
+- **Spaxel Identification:** Develop algorithms to identify which spaxels lie within each of the defined annulus regions.
 
 ### 2. The Data
 
@@ -45,11 +46,11 @@ The galaxy used in this example has plateifu = 8548-12701 and its H-alpha map is
 
 ### Results
 
-The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) creates several annulus regions inside of the galaxy map, with each of the regions having a certain number of spaxesl, which are only counted once. An illustration of thes regions is presented below:
+The code shown in [this notebook](./MaNGA_Annulus_region/Annulus_region_illustration.ipynb) reates several annular regions inside the galaxy map, with each of the regions encompassing a specific number of spaxels, counted only once. An illustration of these regions is presented below:
 
 ![Example Image](./MaNGA_Annulus_region/Annulus_region.jpg)
 
-The creation of annular regions was successful, and the results demonstrate the potential for spectral extraction and stacking. One challenge I encountered was ensuring that the criteria for defining the annuli accurately reflected the galaxy's physical structure (i.e. taking the size and axis ratio into consideration). However, through iterative refinement, I improved the algorithm's accuracy.
+The creation of annular regions was successful, demonstrating the potential for spectral extraction and stacking. One challenge encountered was ensuring that the criteria for defining the annuli accurately reflected the galaxy's physical structure (i.e., taking size and axis ratio into consideration). However, through iterative refinement, the algorithm's accuracy was improved.
 
 
 #### Technologies Used
