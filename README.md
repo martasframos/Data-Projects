@@ -61,6 +61,8 @@ The creation of annular regions was successful, demonstrating the potential for 
 - Astropy
 - Matplotlib
 - FITS (Flexible Image Transport System)
+
+  
 ---
 ## Predicting Galaxy Gradients with Machine Learning 
 Dat2 01/2024
