@@ -102,21 +102,43 @@ After fitting the model, the accuracy achieved was **0.63**. Below are additiona
 **Confusion Matrix**
 The confusion matrix provides insight into the classification results. Notably, class 0 (negative gradient) has the least proportion of misclassifications, indicating a relatively high level of accuracy in predicting this class.
 
-![Example Image](./Galaxy_gradients/confusion_matrix_global.jpg)
+![Example Image](./Galaxy_gradients/Confusion_matrix.jpg)
 
 **ROC Curve**
 The Receiver Operating Characteristic (ROC) curve visualizes the trade-off between sensitivity (true positive rate) and specificity (false positive rate) at various threshold settings. This curve is essential for understanding the model's performance across different classification thresholds.
 
-![Example Image](./Galaxy_gradients/roc_curve_global.jpg)
+![Example Image](./Galaxy_gradients/ROC_curve.jpg)
 
 To enhance our understanding of the model's predictions, I analysed the feature importance scores derived from the Random Forest classifier. These scores indicate which properties are the most predictive of the specific star formation rate (sSFR) gradients.
 
-**Importance of Features**
-The following table presents the importance scores for each feature:
+**Feature Importance vs. Permutation Importance**
 
-![Example Image](./Galaxy_gradients/Feature_Importance.jpg)
+After training the model, I assess **feature importance** to identify which features most significantly influence the classification of sSFR gradients. Feature importance computed by the Random Forest model provides a direct insight into which features the model relies on during training. This method evaluates how much each feature decreases the weighted impurity (e.g., Gini impurity or entropy) at each split of a decision tree, averaged over all trees in the forest.
 
+However, **permutation importance** offers an alternative approach that better captures the impact of each feature in a model-agnostic way. Rather than relying on the internal structure of the model, permutation importance measures the decrease in the model’s performance when the values of a feature are randomly shuffled, thereby breaking its relationship with the target variable. This method provides a more reliable and unbiased estimate of feature importance.
 
+**Why Use Permutation Importance?**
+**1- Model-Agnostic:** Permutation importance can be applied to any model (not just tree-based models like Random Forest), making it more versatile.
+**2- Captures Interactions:** Unlike the built-in feature importance in Random Forest, permutation importance can capture complex interactions between features by measuring how sensitive the model is to changes in each feature. It is a measure of how much the performance of the model (in this case the AUC) descrease when a feature is randomly shuffled. This means that permutation importance scores show the change in accuracy. 
+**3- Considers Overfitting:** Random Forest feature importance can sometimes be biased towards high cardinality features (those with many unique values), while permutation importance is less prone to such biases because it’s directly tied to the model’s performance.
+**4- Considers Testing Data:** Permutation importance is usually calculated on unseen testing data, offering a better reflection of how features contribute to generalization rather than just model training.
+**Drawbacks of Permutation Importance**
+**1- Computation Time:** It can be computationally expensive, especially when working with large datasets, as it requires repeated evaluations of the model on perturbed data.
+**2- Correlation Sensitivity:** If two features are highly correlated, permutation importance can underestimate their importance because shuffling one may not fully break its relationship with the target variable (the correlated feature still contains similar information).
+
+The feature importance score is shown bellow:
+![Example Image](./Galaxy_gradients/Feature_importance.jpg)
+
+As shown in the notebook, the permutation importance shows a different ranking, with sSFR, Sérsic Index and g-r colour being the top 3 features that are most predictive of the sSFR gradient. 
+
+**Why trust permutation importance over feature importance?**
+
+**1- Performance-Based Evaluation:** Permutation importance is based on actual model performance—it measures how much the model's accuracy or any other performance metric (like AUC or F1 score) degrades when a feature's values are randomly shuffled. This is a strong justification because the importance is tied to how much each feature directly contributes to the model's predictions, as opposed to only looking at how the model is built (as with Random Forest's internal feature importance).
+
+**2- Overcomes Model Biases:** Random Forest’s feature importance can be biased towards high-cardinality features (those with many unique values), or toward features that split early in decision trees. For example, features that appear in many nodes across multiple trees may have artificially high importance, even if they aren't crucial for making accurate predictions. Permutation importance eliminates this bias because it tests feature importance by directly disrupting the feature’s predictive relationship with the target variable.
+
+### Conclusions
+In this work, I concluded that the sSFR in the central region of the galaxy, together with its Sérsic Index and g-r colour are the features that play the most significant role in predicting the sSFR gradient in galaxies. 
 
 ---
 ## Data Analysis Report on the Iris Dataset
