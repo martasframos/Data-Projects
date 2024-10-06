@@ -68,7 +68,7 @@ The creation of annular regions was successful, demonstrating the potential for 
 Dat2 01/2024
 ### 1. Introduction
 
-In this study, I analyse the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the centre of the galaxy, with the property values represented on the y-axis and the distance to the centre in unites of `r/R_e` on the x-axis, where `R_e` denotes the effective radius of the galaxy.
+In this study, I analyse the stacked spectra of galaxies within defined annular regions. Using a spectral energy distribution (SED) fitting model, I derive critical astrophysical parameters such as stellar mass, specific star formation rate (sSFR), age, and metallicity. These parameters are then plotted as functions of the distance from the centre of the galaxy, with the property values represented on the y-axis and the distance to the centre in unites of r/Re on the x-axis, where Re denotes the effective radius of the galaxy.
 
 This spatial analysis allows us to explore the distribution of sSFR gradients across different regions of galaxies. Subsequently, I apply machine learning techniques to investigate the relationships between these derived properties and other galaxy characteristics—including colour, Sérsic Index, and more—to identify which features are the most predictive of sSFR gradients.
 
