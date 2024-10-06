@@ -227,11 +227,10 @@ This graph allows us to:
 
 2- Identify potential clusters and separations among the three species based on feature measurements.
 
-The pairplot clearly shows that Setosa is distinctly separated from Versicolor and Virginica, especially in the petal length and width dimensions. This separation indicates that KMeans or other clustering methods might effectively classify these species.
+From the pairplot, it is evident that the Setosa species is distinctly separable from the other two species, especially in the petal length and petal width dimensions. For example, as we examine the scatter plots of petal length versus petal width, Setosa displays a clear clustering, indicating that these features can effectively differentiate this species from Versicolor and Virginica. On the other hand, Versicolor and Virginica show some overlap, particularly in the sepal dimensions.
 
-Moreover, the pairplot reveals overlapping regions between Versicolor and Virginica, particularly in petal measurements. This suggests that while these two species may share some similarities, there are still distinct characteristics that can be leveraged for classification purposes. The visualization aids in assessing the feature importance and understanding the dimensions that contribute most to the classification task. Analysing these relationships further may inform feature selection or engineering steps to enhance model performance.
+Additionally, strong correlations are observable between certain features, notably between petal length and petal width, which can inform the development of classification models. The distribution plots along the diagonal reveal that petal length and petal width generally exhibit a wider range of values compared to sepal dimensions, which tend to cluster more closely.
 
-Ultimately, the insights derived from the pairplot can guide future explorations, such as tuning clustering algorithms or investigating additional features to improve the classification accuracy of the species.
 
 ##### 2.1.2. Correlation Heatmap
 The correlation heatmap displays the correlation coefficients between different features. The colour intensity indicates the strength of correlation, where darker colours represent stronger relationships.
@@ -270,7 +269,7 @@ The box plot visualizes the distribution of sepal widths for each species. It hi
 
 **Wider Sepal Width for Setosa:** Setosa has the widest sepal widths compared to Versicolor and Virginica. This suggests that the measurements for Setosa are not only distinct in petal dimensions but also in sepal dimensions, reinforcing its classification.
 
-**Outliers in Versicolor:** There are a few outliers in the Versicolor group, suggesting that some measurements fall outside the typical range. Identifying these outliers is crucial, as they may indicate variability within the species or measurement errors that could impact model performance.
+**Outliers:** There are outliers in the Setosa and Virginica group, suggesting that some measurements fall outside the typical range. Identifying these outliers is crucial, as they may indicate variability within the species or measurement errors that could impact model performance.
 
 Box plots are essential for understanding the spread and centre of the data, which can inform decisions on data preprocessing and model selection. The visualization provides a quick overview of the distribution characteristics, enabling us to make informed choices regarding feature transformations or the handling of outliers.
 
@@ -318,7 +317,7 @@ The pairwise kernel density estimation (KDE) plot visualizes the distributions o
 
 **Multivariate Relationships:** The pairwise KDE plot emphasizes the interactions between features. For example, the relationship between sepal length and sepal width might show a different distribution than between petal length and width. Observing these relationships helps in understanding how these features interact and influence classification.
 
-**Usefulness for Model Selection:** The insights gained from the KDE plots can inform decisions on which features to include in predictive modelling.. Features that show clear separations between species may be more beneficial for classification tasks.
+**Usefulness for Model Selection:** The insights gained from the KDE plots can inform decisions on which features to include in predictive modelling. Features that show clear separations between species may be more beneficial for classification tasks.
 
 ##### 2.1.8 t-SNE Visualization
 
@@ -328,7 +327,7 @@ In this analysis, I created two new features to enhance the model's predictive c
 
 1. Sepal Length Width: This feature is the product of sepal length and sepal width: 
 
-$$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $$
+$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $
 
 This new feature captures interactions between sepal dimensions, which might help in distinguishing between different species of iris flowers.
 
