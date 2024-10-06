@@ -325,7 +325,7 @@ The pairwise kernel density estimation (KDE) plot visualizes the distributions o
 
 In this analysis, I created two new features to enhance the model's predictive capabilities:
 
-1. Sepal Length Width: This feature is the product of sepal length and sepal width: 
+1. **Sepal Length Width:** This feature is the product of sepal length and sepal width: 
 
 $$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $$
 
@@ -376,14 +376,6 @@ Techniques like PCA and t-SNE were employed to visualize high-dimensional data. 
 5- Feature Engineering:
 
 The creation of new features, specifically the product of sepal length and width and petal length and width, enhanced the model's predictive capabilities. Feature engineering is essential in machine learning, as it allows for the capture of complex interactions that original features might not convey.
-
-6- Model Evaluation:
-
-The evaluation of feature importance, including both traditional importance and permutation importance, provided insights into which features most significantly impacted model predictions. This understanding is crucial for interpreting model outputs and gaining deeper insights into the biological processes governing iris species.
-
-7- Applications and Future Work:
-
-The findings from this analysis have broader implications in fields such as botany, ecology, and machine learning. Future work could involve applying these techniques to larger and more complex datasets or exploring additional machine learning algorithms to improve classification accuracy.
 
 In summary, this project successfully demonstrated the power of data visualization, feature engineering, and clustering techniques in understanding and predicting species classifications in the Iris dataset. The insights gained contribute to a deeper understanding of the biological differences between species and highlight the importance of data-driven approaches in scientific research.
 
