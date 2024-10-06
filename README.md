@@ -333,7 +333,7 @@ This new feature captures interactions between sepal dimensions, which might hel
 
 2. **Petal Length Width**: Similarly, this feature is obtained by multiplying petal length and petal width:
 
-   $$ \text{Petal Length Width} = \text{Petal Length} \times \text{Petal Width} $$
+$$ \text{Petal Length Width} = \text{Petal Length} \times \text{Petal Width} $$
 
 This feature reflects the relationship between petal dimensions and may provide additional context for classification tasks.
 
