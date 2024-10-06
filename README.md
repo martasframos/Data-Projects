@@ -327,7 +327,7 @@ In this analysis, I created two new features to enhance the model's predictive c
 
 1. Sepal Length Width: This feature is the product of sepal length and sepal width: 
 
-$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $
+$$ \text{Sepal Length Width} = \text{Sepal Length} \times \text{Sepal Width} $$
 
 This new feature captures interactions between sepal dimensions, which might help in distinguishing between different species of iris flowers.
 
